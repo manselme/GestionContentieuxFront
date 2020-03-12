@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class ProfessionnelService {
+export class ProfessionelService {
 
   private baseURL = 'http://localhost:9090/professionels';
   
