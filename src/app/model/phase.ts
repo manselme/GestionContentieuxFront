@@ -1,6 +1,8 @@
+import { Affaire } from './affaire';
+
 export class Phase {
     nomPhase:String;
     dateDebut:Date;
     dateFin:Date;
-    affaires:any[];
+    affaire:Affaire;
 }

@@ -6,5 +6,5 @@ export class Tribunal {
     fax:number;
     tel:number;
     region:String;
-    affaires : Affaire;
+    affaires : Array<Affaire>;
 }

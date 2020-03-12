@@ -8,7 +8,7 @@ export class Utilisateur {
     username:String;
     password:String;
     email:String;
-    roles : Role;
-    affaires : Affaire;
-    tiers:Tiers;
+    roles : Array<Role>;
+    affaires : Array<Affaire>;
+    tiers:Array<Tiers>;
 }
