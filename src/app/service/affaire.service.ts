@@ -17,13 +17,13 @@ export class AffaireService {
   public deleteAffaire(id: number): Observable<any> {
     return this.httpClient.delete(this.baseURL + "/" + id)
   }
-  public saveAffaire(user: any): Observable<any> {
-    return this.httpClient.post(this.baseURL, user);
+  public saveAffaire(affaire: any): Observable<any> {
+    return this.httpClient.post(this.baseURL, affaire);
   }
   public getAffaire(id: number): Observable<any> {
     return this.httpClient.get(this.baseURL + "/" + id);
   }
-  public updateAffaire(id: number, user: any): Observable<any> {
-    return this.httpClient.put(this.baseURL + "/" + id, user);
+  public updateAffaire(id: number, affaire: any): Observable<any> {
+    return this.httpClient.put(this.baseURL + "/" + id, affaire);
   }
 }

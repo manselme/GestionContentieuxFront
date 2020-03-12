@@ -17,13 +17,13 @@ export class TribunalService {
   public deleteTribunal(id: number): Observable<any> {
     return this.httpClient.delete(this.baseURL + "/" + id)
   }
-  public saveTribunal(user: any): Observable<any> {
-    return this.httpClient.post(this.baseURL, user);
+  public saveTribunal(tribunal: any): Observable<any> {
+    return this.httpClient.post(this.baseURL, tribunal);
   }
   public getTribunal(id: number): Observable<any> {
     return this.httpClient.get(this.baseURL + "/" + id);
   }
-  public updateTribunal(id: number, user: any): Observable<any> {
-    return this.httpClient.put(this.baseURL + "/" + id, user);
+  public updateTribunal(id: number, tribunal: any): Observable<any> {
+    return this.httpClient.put(this.baseURL + "/" + id, tribunal);
   }
 }

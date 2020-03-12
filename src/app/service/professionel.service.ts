@@ -17,13 +17,13 @@ export class ProfessionelService {
   public deleteProfessionel(id: number): Observable<any> {
     return this.httpClient.delete(this.baseURL + "/" + id)
   }
-  public saveProfessionel(user: any): Observable<any> {
-    return this.httpClient.post(this.baseURL, user);
+  public saveProfessionel(professionel: any): Observable<any> {
+    return this.httpClient.post(this.baseURL, professionel);
   }
   public getProfessionel(id: number): Observable<any> {
     return this.httpClient.get(this.baseURL + "/" + id);
   }
-  public updateProfessionel(id: number, user: any): Observable<any> {
-    return this.httpClient.put(this.baseURL + "/" + id, user);
+  public updateProfessionel(id: number, professionel: any): Observable<any> {
+    return this.httpClient.put(this.baseURL + "/" + id, professionel);
   }
 }

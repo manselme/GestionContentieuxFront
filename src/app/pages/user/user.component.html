@@ -25,12 +25,12 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let a of affaire">
+                  <tr *ngFor="let a of affaires">
                     <td>{{a.reference}}</td>
                     <td>{{a.titre}}</td>
                     <td>{{a.description}}</td>
                     <td>
-                      <button class=" btn btn-fill btn-danger " (click)="deleteUser(u)">Detail</button>
+                      <button class=" btn btn-fill btn-danger " (click)="deleteAffaire(a)">Detail</button>
                       &nbsp;
                       <button class=" btn btn-fill btn-danger" (click)="editAffaire(a)">Edit</button>
                     </td>

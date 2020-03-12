@@ -17,13 +17,13 @@ export class TiersService {
   public deleteTiers(id: number): Observable<any> {
     return this.httpClient.delete(this.baseURL + "/" + id)
   }
-  public saveTiers(user: any): Observable<any> {
-    return this.httpClient.post(this.baseURL, user);
+  public saveTiers(tiers: any): Observable<any> {
+    return this.httpClient.post(this.baseURL, tiers);
   }
   public getTiers(id: number): Observable<any> {
     return this.httpClient.get(this.baseURL + "/" + id);
   }
-  public updateTiers(id: number, user: any): Observable<any> {
-    return this.httpClient.put(this.baseURL + "/" + id, user);
+  public updateTiers(id: number, tiers: any): Observable<any> {
+    return this.httpClient.put(this.baseURL + "/" + id, tiers);
   }
 }

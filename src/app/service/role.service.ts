@@ -17,13 +17,13 @@ export class RoleService {
   public deleteRole(id: number): Observable<any> {
     return this.httpClient.delete(this.baseURL + "/" + id)
   }
-  public saveRole(user: any): Observable<any> {
-    return this.httpClient.post(this.baseURL, user);
+  public saveRole(role: any): Observable<any> {
+    return this.httpClient.post(this.baseURL, role);
   }
   public getRole(id: number): Observable<any> {
     return this.httpClient.get(this.baseURL + "/" + id);
   }
-  public updateRole(id: number, user: any): Observable<any> {
-    return this.httpClient.put(this.baseURL + "/" + id, user);
+  public updateRole(id: number, role: any): Observable<any> {
+    return this.httpClient.put(this.baseURL + "/" + id, role);
   }
 }

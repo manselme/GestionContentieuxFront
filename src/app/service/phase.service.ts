@@ -17,13 +17,13 @@ export class PhaseService {
   public deletePhase(id: number): Observable<any> {
     return this.httpClient.delete(this.baseURL + "/" + id)
   }
-  public savePhase(user: any): Observable<any> {
-    return this.httpClient.post(this.baseURL, user);
+  public savePhase(phase: any): Observable<any> {
+    return this.httpClient.post(this.baseURL, phase);
   }
   public getPhase(id: number): Observable<any> {
     return this.httpClient.get(this.baseURL + "/" + id);
   }
-  public updatePhase(id: number, user: any): Observable<any> {
-    return this.httpClient.put(this.baseURL + "/" + id, user);
+  public updatePhase(id: number, phase: any): Observable<any> {
+    return this.httpClient.put(this.baseURL + "/" + id, phase);
   }
 }

@@ -17,14 +17,14 @@ public getAllParticulier(): Observable<any> {
   public deleteParticulier(id: number): Observable<any> {
     return this.httpClient.delete(this.baseURL + "/" + id)
   }
-  public saveParticulier(user: any): Observable<any> {
-    return this.httpClient.post(this.baseURL, user);
+  public saveParticulier(particulier: any): Observable<any> {
+    return this.httpClient.post(this.baseURL, particulier);
   }
   public getParticulier(id: number): Observable<any> {
     return this.httpClient.get(this.baseURL + "/" + id);
   }
-  public updateParticulier(id: number, user: any): Observable<any> {
-    return this.httpClient.put(this.baseURL + "/" + id, user);
+  public updateParticulier(id: number, particulier: any): Observable<any> {
+    return this.httpClient.put(this.baseURL + "/" + id, particulier);
   }
 
 }
