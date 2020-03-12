@@ -15,6 +15,15 @@ import { AppRoutingModule } from "./app-routing.module";
 import { ComponentsModule } from "./components/components.module";
 import { UserService } from './service/user.service';
 import { AppService } from './app.service';
+import { AffaireComponent } from './pages/affaire/affaire.component';
+import { DocumentComponent } from './pages/document/document.component';
+import { ParticulierComponent } from './pages/particulier/particulier.component';
+import { PhaseComponent } from './pages/phase/phase.component';
+import { ProfessionelComponent } from './pages/professionel/professionel.component';
+import { RoleComponent } from './pages/role/role.component';
+import { TacheComponent } from './pages/tache/tache.component';
+import { TiersComponent } from './pages/tiers/tiers.component';
+import { TribunalComponent } from './pages/tribunal/tribunal.component';
 
 @Injectable()
 export class XhrInterceptor implements HttpInterceptor{
@@ -38,7 +47,7 @@ export class XhrInterceptor implements HttpInterceptor{
     AppRoutingModule,
     ToastrModule.forRoot()
   ],
-  declarations: [AppComponent, AdminLayoutComponent, AuthLayoutComponent],
+  declarations: [AppComponent, AdminLayoutComponent, AuthLayoutComponent, AffaireComponent, DocumentComponent, ParticulierComponent, PhaseComponent, ProfessionelComponent, RoleComponent, TacheComponent, TiersComponent, TribunalComponent],
   providers: [AppService, UserService, {provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi :true}],
   bootstrap: [AppComponent]
 })
