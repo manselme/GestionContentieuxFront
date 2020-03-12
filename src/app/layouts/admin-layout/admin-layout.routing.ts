@@ -19,7 +19,7 @@ export const AdminLayoutRoutes: Routes = [
   { path:"", redirectTo: "/login", pathMatch:'full'},
   { path: "user", component: UserComponent },
   { path: 'login', component: LoginComponent},
-  //{ path: "tribunals", component: TribunalComponent },
+  { path: "tribunals", component: TribunalComponent },
   /*{ path: "tables", component: TablesComponent },
   { path: "typography", component: TypographyComponent },*/
   // { path: "rtl", component: RtlComponent }

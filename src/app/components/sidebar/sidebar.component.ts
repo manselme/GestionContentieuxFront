@@ -56,7 +56,7 @@ export const ROUTES: RouteInfo[] = [
     rtlTitle: "ملف تعريفي للمستخدم",
     icon: "icon-atom",
     class: ""
-  }
+  },
   /*,
   {
     path: "/tables",
