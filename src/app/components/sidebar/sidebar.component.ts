@@ -51,12 +51,13 @@ export const ROUTES: RouteInfo[] = [
     class: ""
   },
   {
-    path: "/tribunaux",
+    path: "/tribunals",
     title: "Tribunaux",
     rtlTitle: "ملف تعريفي للمستخدم",
     icon: "icon-atom",
     class: ""
-  }/*,
+  }
+  /*,
   {
     path: "/tables",
     title: "Table List",

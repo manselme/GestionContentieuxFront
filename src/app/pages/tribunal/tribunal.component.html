@@ -1,3 +1,39 @@
-<p>
-  tribunal works!
-</p>
+<div class="row">
+  <div class=" col-md-12">
+    <div class=" card card-plain">
+      <div class=" card-header">
+        <h4 class=" card-title">Liste des tribunaux</h4>
+      </div>
+      <div class=" card-body">
+        <div class=" table-responsive">
+          <table class=" table tablesorter" id="">
+            <thead class=" text-primary">
+              <tr>
+                <th>Nom Tribunal</th>
+                <th>Adresse</th>
+                <th>Région</th>
+                <th>Téléphone</th>
+                <th>Fax</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let t of tribunal">
+                <td>{{t.nomTribunal}}</td>
+                <td>{{t.adresse}}</td>
+                <td>{{t.region}}</td>
+                <td>{{t.tel}}</td>
+                <td>{{t.fax}}</td>
+                <td>
+                  <button class=" btn btn-fill btn-danger " (click)="deleteUser(u)">Detail</button>
+                  &nbsp;
+                  <button class=" btn btn-fill btn-danger" (click)="editAffaire(a)">Edit</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
