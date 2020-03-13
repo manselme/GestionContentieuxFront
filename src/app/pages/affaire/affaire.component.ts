@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class AffaireComponent implements OnInit {
   affaires: any[];
   affaire : Affaire = new Affaire();
+  idAffaire: number;
 
 
   constructor(private appService:AppService, private affaireService: AffaireService,
@@ -38,5 +39,10 @@ export class AffaireComponent implements OnInit {
   }
   editAffaire(id:number){
     this.router.navigate(['editAffaire',id]);
+  }
+  archiverAffaire(affaire){
+    this.affaireService.archiverAffaire(this.idAffaire, this.affaire).subscribe(data => console.log(data),error => console.log(error));
+  this.affaire = new Affaire();
+  this.router.navigate(['editAffaire',this.idAffaire]);
   }
 }
