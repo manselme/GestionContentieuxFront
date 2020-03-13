@@ -29,7 +29,7 @@ import { TribunalComponent } from 'src/app/pages/tribunal/tribunal.component';
     DashboardComponent,
     UserComponent,
     LoginComponent,
-    //TribunalComponent,
+    TribunalComponent,
     TablesComponent,
     IconsComponent,
     TypographyComponent,
