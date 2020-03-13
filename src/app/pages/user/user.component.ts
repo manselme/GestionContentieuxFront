@@ -21,7 +21,8 @@ export class UserComponent implements OnInit {
       nomUtilisateur: ['', Validators.required],
       prenomUtilisateur: ['', Validators.required],
       username: ['', Validators.required],
-      password: ['', Validators.required]
+      password: ['', Validators.required],
+      email:['',Validators.required]
     });
   }
   authenticated(){
