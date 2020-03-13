@@ -1,6 +1,6 @@
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgModule, Injectable } from "@angular/core";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HttpInterceptor, HttpRequest, HttpHandler, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { RouterModule } from "@angular/router";
 import { ToastrModule } from 'ngx-toastr';
@@ -44,6 +44,7 @@ export class XhrInterceptor implements HttpInterceptor{
     ComponentsModule,
     NgbModule,
     RouterModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     ToastrModule.forRoot()
   ],

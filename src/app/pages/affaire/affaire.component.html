@@ -1,29 +1,40 @@
-<div class=" card card-plain">
-  <div class=" card-header">
-    <h4 class=" card-title">Liste des affaires</h4>
-  </div>
-  <div class=" card-body">
-    <div class=" table-responsive">
-      <table class=" table tablesorter" id="">
-        <thead class=" text-primary">
-          <tr>
-            <th>Reference</th>
-            <th>titre</th>
-            <th>description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let a of affaires">
-            <td>{{a.reference}}</td>
-            <td>{{a.titre}}</td>
-            <td>{{a.description}}</td>
-            <td>
-              <button class=" btn btn-fill btn-danger " (click)="deleteUser(u)">Detail</button>
-              &nbsp;
-              <button class=" btn btn-fill btn-danger" (click)="editAffaire(a)">Edit</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+
+  <div [hidden]="!authenticated()">
+    <div class=" row">
+        </div>
+    <div class="row">
+      <div class=" col-md-12">
+        <div class=" card card-plain">
+          <div class=" card-header">
+            <h4 class=" card-title">Liste des affaires</h4>
+          </div>
+          <div class=" card-body">
+            <div class=" table-responsive">
+              <table class=" table tablesorter" id="">
+                <thead class=" text-primary">
+                  <tr>
+                    <th>Reference</th>
+                    <th>titre</th>
+                    <th>description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let a of affaires">
+                    <td>{{a.reference}}</td>
+                    <td>{{a.titre}}</td>
+                    <td>{{a.description}}</td>
+                    <!--<td>
+                      <button class=" btn btn-fill btn-danger " (click)="deleteAffaire(a)">Detail</button>
+                      &nbsp;
+                      <button class=" btn btn-fill btn-danger" (click)="editAffaire(a)">Edit</button>
+                    </td>-->
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>

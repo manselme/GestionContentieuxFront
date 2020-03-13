@@ -3,11 +3,36 @@
     <p>Connectez-vous pour afficher l'interface utilisateur</p>
     <a href="/users">Retour</a>
   </div>
-
+  <div [hidden]="!authenticated()">
+    <h4>Ajouter un utilisateur</h4>
+    <form (submit)="createUser()">
+      <div class="form-group">
+        <label>Nom</label>
+        <input type="text" class="form-control" id="nomUtilisateur" name="nomUtilisateur" [(ngModel)]="nomUtilisateur" />
+      </div>
+      <div class="form-group">
+        <label>Prénom</label>
+        <input type="text" class="form-control" id="prenomUtilisateur" name="prenomUtilisateur"  [(ngModel)]="prenomUtilisateur"/>
+      </div>
+      <div class="form-group">
+        <label>Username</label>
+        <input type="text" class="form-control" id="username" name="username"  [(ngModel)]="username"/>
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" class="form-control" id="password" name="password"  [(ngModel)]="password"/>
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="text" class="form-control" id="email" name="email"  [(ngModel)]="email"/>
+      </div>
+      <button type="submit" class="btn btn-success animation-on-hover" type="button">Ajouter</button>
+    </form>
+  </div>
 
   <div [hidden]="!authenticated()">
     <div class=" row">
-        </div>
+    </div>
     <div class="row">
       <div class=" col-md-12">
         <div class=" card card-plain">
@@ -30,9 +55,9 @@
                     <td>{{a.titre}}</td>
                     <td>{{a.description}}</td>
                     <td>
-                      <button class=" btn btn-fill btn-danger " (click)="deleteAffaire(a)">Detail</button>
+                      <!--<button class=" btn btn-fill btn-danger " (click)="deleteAffaire(a)">Detail</button>
                       &nbsp;
-                      <button class=" btn btn-fill btn-danger" (click)="editAffaire(a)">Edit</button>
+                      <button class=" btn btn-fill btn-danger" (click)="editAffaire(a)">Edit</button>-->
                     </td>
                   </tr>
                 </tbody>
