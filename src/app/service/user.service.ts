@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class UserService {
-  private baseURL = 'http://localhost:9090/users';
+  private baseURL = 'http://localhost:9090/utilisateurs';
   constructor(private httpClient: HttpClient) { }
   public getAllUtilisateur(): Observable<any> {
     return this.httpClient.get(this.baseURL);

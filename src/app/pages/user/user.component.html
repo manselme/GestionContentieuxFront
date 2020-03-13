@@ -8,16 +8,29 @@
     <h4>Ajouter un utilisateur</h4>
 
     <form [formGroup] = "myForm" (ngsubmit)="createUser(myForm)">
+      <div class=" row">
+        <div class=" col-md-5 pr-md-1">
         <label>Nom</label>
-        <input type="text" [(ngModel)]="user.nomUtilisateur"  formControlName="nomUtilisateur"/><br>
+        <input type="text" class="form-control" [(ngModel)]="user.nomUtilisateur"  formControlName="nomUtilisateur"/>
+        </div>
+        <div class=" col-md-5 pr-md-1">
         <label>Prénom</label>
-        <input type="text"  [(ngModel)]="user.prenomUtilisateur" formControlName="prenomUtilisateur" /><br>
+        <input type="text" class="form-control" [(ngModel)]="user.prenomUtilisateur" formControlName="prenomUtilisateur" />
+        </div></div>
+        <div class=" row">
+          <div class=" col-md-5 pr-md-1">
         <label>Username</label>
-        <input type="text" [(ngModel)]="user.username" formControlName="username"/><br>
+        <input type="text" class="form-control" [(ngModel)]="user.username" formControlName="username"/>
+        </div>
+        <div class=" col-md-5 pr-md-1">
         <label>Password</label>
-        <input type="password" [(ngModel)]="user.password" formControlName="password"/><br>
+        <input type="password" class="form-control" [(ngModel)]="user.password" formControlName="password"/>
+        </div></div>
+        <div class=" row">
+          <div class=" col-md-5 pr-md-1">
         <label>Email</label>
-        <input type="text" [(ngModel)]="user.email" formControlName="email"/><br>
+        <input type="text" class="form-control" [(ngModel)]="user.email" formControlName="email"/><br>
+        </div></div>
       <button class="btn btn-success animation-on-hover">Ajouter</button>
     </form>
   </div>
@@ -37,8 +50,9 @@
                 <thead class=" text-primary">
                   <tr>
                     <th>Reference</th>
-                    <th>titre</th>
-                    <th>description</th>
+                    <th>Titre</th>
+                    <th>Description</th>
+                    <th>Actions</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -46,11 +60,11 @@
                     <td>{{a.reference}}</td>
                     <td>{{a.titre}}</td>
                     <td>{{a.description}}</td>
-                    <!--<td>
-                      <button class=" btn btn-fill btn-danger " (click)="deleteAffaire(a)">Detail</button>
+                    <td>
+                      <button class=" btn btn-fill btn-danger " (click)="deleteAffaire(a)">Supprimer</button>
                       &nbsp;
                       <button class=" btn btn-fill btn-danger" (click)="editAffaire(a)">Edit</button>
-                    </td>-->
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -68,7 +82,7 @@
       <div class=" col-md-12">
         <div class=" card card-plain">
           <div class=" card-header">
-            <h4 class=" card-title">Liste des utilisateur</h4>
+            <h4 class=" card-title">Liste des utilisateurs</h4>
           </div>
           <div class=" card-body">
             <div class=" table-responsive">
@@ -78,6 +92,9 @@
                     <th>Nom</th>
                     <th>Prenom</th>
                     <th>Email</th>
+                    <th>Username</th>
+                    <th>Password</th>
+                    <th>Actions</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -85,11 +102,13 @@
                     <td>{{u.nomUtilisateur}}</td>
                     <td>{{u.prenomUtilisateur}}</td>
                     <td>{{u.email}}</td>
-                    <!--<td>
-                      <button class=" btn btn-fill btn-danger " (click)="deleteAffaire(a)">Detail</button>
+                    <td>{{u.username}}</td>
+                    <td>{{u.password}}</td>
+                    <td>
+                      <button class=" btn btn-fill btn-danger " (click)="deleteUser(u)">Supprimer</button>
                       &nbsp;
-                      <button class=" btn btn-fill btn-danger" (click)="editAffaire(a)">Edit</button>
-                    </td>-->
+                      <button class=" btn btn-fill btn-danger" (click)="editUser(u)">Editer</button>
+                    </td>
                   </tr>
                 </tbody>
               </table>

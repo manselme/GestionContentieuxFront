@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AffaireService } from 'src/app/service/affaire.service';
 import { AppService } from 'src/app/app.service';
 import { Affaire } from 'src/app/model/affaire';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-affaire',
   templateUrl: './affaire.component.html'
@@ -11,7 +12,8 @@ export class AffaireComponent implements OnInit {
   affaire : Affaire = new Affaire();
 
 
-  constructor(private appService:AppService, private affaireService: AffaireService) { }
+  constructor(private appService:AppService, private affaireService: AffaireService,
+    private router: Router) { }
 
   ngOnInit() {
     this.loadAffaire();
@@ -33,5 +35,8 @@ export class AffaireComponent implements OnInit {
 
       }
     )
+  }
+  editAffaire(id:number){
+    this.router.navigate(['editAffaire',id]);
   }
 }

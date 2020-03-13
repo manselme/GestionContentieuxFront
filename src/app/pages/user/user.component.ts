@@ -21,7 +21,16 @@ export class UserComponent implements OnInit {
   myForm: FormGroup;
 
 
-  constructor(private affaireService: AffaireService, private reactiveFormsModule: ReactiveFormsModule ,private formsModule: FormsModule, private appService:AppService, private formBuilder: FormBuilder,private userService: UserService,private router: Router) {}
+  constructor(
+    private affaireService: AffaireService, 
+    private reactiveFormsModule: ReactiveFormsModule ,
+    private formsModule: FormsModule, 
+    private appService:AppService, 
+    private formBuilder: FormBuilder,
+    private userService: UserService,
+    private router: Router
+  ) {}
+  
   ngOnInit():  void  {
     this.loadUser();
     this.myForm = this.formBuilder.group({
@@ -42,6 +51,9 @@ export class UserComponent implements OnInit {
   loadAffaire() {
     this.affaireService.getAllAffaire().subscribe(data => { this.affaires = data; console.log(this.affaires) })
   }
+  deleteAffaire(affaire) {
+    this.affaireService.deleteAffaire(affaire.idAffaire).subscribe(() => { this.loadAffaire() })
+  }
   deleteUser(user) {
     this.userService.deleteUtilisateur(user.idUtilisateur).subscribe(() => { this.loadUser() })
   }
@@ -55,5 +67,8 @@ export class UserComponent implements OnInit {
   }
   editUser(id:number){
     this.router.navigate(['editUser',id]);
+  }
+  editAffaire(id:number){
+    this.router.navigate(['editAffaire',id]);
   }
 }
