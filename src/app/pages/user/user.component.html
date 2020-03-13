@@ -4,29 +4,21 @@
     <a href="/users">Retour</a>
   </div>
   <div [hidden]="!authenticated()">
+
     <h4>Ajouter un utilisateur</h4>
-    <form (submit)="createUser()">
-      <div class="form-group">
+
+    <form [formGroup] = "myForm" (ngsubmit)="createUser(myForm)">
         <label>Nom</label>
-        <input type="text" class="form-control" id="nomUtilisateur" name="nomUtilisateur" [(ngModel)]="nomUtilisateur" />
-      </div>
-      <div class="form-group">
+        <input type="text" [(ngModel)]="user.nomUtilisateur"  formControlName="nomUtilisateur"/><br>
         <label>Prénom</label>
-        <input type="text" class="form-control" id="prenomUtilisateur" name="prenomUtilisateur"  [(ngModel)]="prenomUtilisateur"/>
-      </div>
-      <div class="form-group">
+        <input type="text"  [(ngModel)]="user.prenomUtilisateur" formControlName="prenomUtilisateur" /><br>
         <label>Username</label>
-        <input type="text" class="form-control" id="username" name="username"  [(ngModel)]="username"/>
-      </div>
-      <div class="form-group">
+        <input type="text" [(ngModel)]="user.username" formControlName="username"/><br>
         <label>Password</label>
-        <input type="password" class="form-control" id="password" name="password"  [(ngModel)]="password"/>
-      </div>
-      <div class="form-group">
-        <label>Email</label>
-        <input type="text" class="form-control" id="email" name="email"  [(ngModel)]="email"/>
-      </div>
-      <button type="submit" class="btn btn-success animation-on-hover" type="button">Ajouter</button>
+        <input type="password" [(ngModel)]="user.password" formControlName="password"/><br>
+        <!--<label>Email</label>
+        <input type="text" [(ngModel)]="user.email" formControlName="email"/><br>-->
+      <button class="btn btn-success animation-on-hover">Ajouter</button>
     </form>
   </div>
 
@@ -54,11 +46,11 @@
                     <td>{{a.reference}}</td>
                     <td>{{a.titre}}</td>
                     <td>{{a.description}}</td>
-                    <td>
-                      <!--<button class=" btn btn-fill btn-danger " (click)="deleteAffaire(a)">Detail</button>
+                    <!--<td>
+                      <button class=" btn btn-fill btn-danger " (click)="deleteAffaire(a)">Detail</button>
                       &nbsp;
-                      <button class=" btn btn-fill btn-danger" (click)="editAffaire(a)">Edit</button>-->
-                    </td>
+                      <button class=" btn btn-fill btn-danger" (click)="editAffaire(a)">Edit</button>
+                    </td>-->
                   </tr>
                 </tbody>
               </table>

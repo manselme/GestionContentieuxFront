@@ -38,7 +38,6 @@ export class UserComponent implements OnInit {
       () => {
         this.loadUser();
         this.user = new Utilisateur();
-        this.router.navigateByUrl("/user");
       }
     )
   }
