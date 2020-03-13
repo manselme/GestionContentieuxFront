@@ -14,8 +14,8 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { AppRoutingModule } from "./app-routing.module";
 import { ComponentsModule } from "./components/components.module";
 import { UserService } from './service/user.service';
+import { AffaireService } from './service/affaire.service';
 import { AppService } from './app.service';
-import { AffaireComponent } from './pages/affaire/affaire.component';
 import { DocumentComponent } from './pages/document/document.component';
 import { ParticulierComponent } from './pages/particulier/particulier.component';
 import { PhaseComponent } from './pages/phase/phase.component';
@@ -48,8 +48,8 @@ export class XhrInterceptor implements HttpInterceptor{
     AppRoutingModule,
     ToastrModule.forRoot()
   ],
-  declarations: [AppComponent, AdminLayoutComponent, AuthLayoutComponent, AffaireComponent, DocumentComponent, ParticulierComponent, PhaseComponent, ProfessionelComponent, RoleComponent, TacheComponent, TiersComponent],
-  providers: [AppService, UserService, TribunalService, {provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi :true}],
+  declarations: [AppComponent, AdminLayoutComponent, AuthLayoutComponent, DocumentComponent, ParticulierComponent, PhaseComponent, ProfessionelComponent, RoleComponent, TacheComponent, TiersComponent],
+  providers: [AppService,AffaireService, UserService, TribunalService, {provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi :true}],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

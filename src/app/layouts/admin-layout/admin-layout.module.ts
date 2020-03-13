@@ -16,6 +16,7 @@ import { TypographyComponent } from "../../pages/typography/typography.component
 import { NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import { LoginComponent } from 'src/app/login/login.component';
 import { TribunalComponent } from 'src/app/pages/tribunal/tribunal.component';
+import { AffaireComponent } from 'src/app/pages/affaire/affaire.component';
 
 @NgModule({
   imports: [
@@ -31,6 +32,7 @@ import { TribunalComponent } from 'src/app/pages/tribunal/tribunal.component';
     UserComponent,
     LoginComponent,
     TribunalComponent,
+    AffaireComponent,
     TablesComponent,
     IconsComponent,
     TypographyComponent,
