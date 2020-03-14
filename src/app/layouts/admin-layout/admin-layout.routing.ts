@@ -10,6 +10,7 @@ import { LoginComponent } from 'src/app/login/login.component';
 import { TribunalComponent } from "../../pages/tribunal/tribunal.component";
 import { DocumentComponent } from 'src/app/pages/document/document.component';
 import { AffaireComponent } from 'src/app/pages/affaire/affaire.component';
+import { AccueilComponent } from 'src/app/pages/accueil/accueil.component';
 // import { RtlComponent } from "../../pages/rtl/rtl.component";
 
 export const AdminLayoutRoutes: Routes = [
@@ -18,8 +19,9 @@ export const AdminLayoutRoutes: Routes = [
   { path: "maps", component: MapComponent },
   { path: "notifications", component: NotificationsComponent },*/
   { path:"", redirectTo: "/login", pathMatch:'full'},
-  { path: "user", component: UserComponent },
   { path: 'login', component: LoginComponent},
+  { path: "accueil", component: AccueilComponent},
+  { path: "user", component: UserComponent },
   { path: "tribunals", component: TribunalComponent },
   {path: "affaires", component:AffaireComponent},
   {path : "documents" , component: DocumentComponent}
