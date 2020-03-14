@@ -10,6 +10,7 @@ import { LoginComponent } from 'src/app/login/login.component';
 import { TribunalComponent } from "../../pages/tribunal/tribunal.component";
 import { DocumentComponent } from 'src/app/pages/document/document.component';
 import { AffaireComponent } from 'src/app/pages/affaire/affaire.component';
+import { TacheComponent } from 'src/app/pages/tache/tache.component';
 // import { RtlComponent } from "../../pages/rtl/rtl.component";
 
 export const AdminLayoutRoutes: Routes = [
@@ -22,7 +23,8 @@ export const AdminLayoutRoutes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: "tribunals", component: TribunalComponent },
   {path: "affaires", component:AffaireComponent},
-  {path : "documents" , component: DocumentComponent}
+  {path : "documents" , component: DocumentComponent},
+  {path: "taches", component : TacheComponent}
   /*{ path: "tables", component: TablesComponent },
   { path: "typography", component: TypographyComponent },*/
   // { path: "rtl", component: RtlComponent }

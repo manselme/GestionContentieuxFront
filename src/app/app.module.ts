@@ -22,7 +22,6 @@ import { ParticulierComponent } from './pages/particulier/particulier.component'
 import { PhaseComponent } from './pages/phase/phase.component';
 import { ProfessionelComponent } from './pages/professionel/professionel.component';
 import { RoleComponent } from './pages/role/role.component';
-import { TacheComponent } from './pages/tache/tache.component';
 import { TiersComponent } from './pages/tiers/tiers.component';
 import { TribunalService } from './service/tribunal.service';
 
@@ -49,7 +48,7 @@ export class XhrInterceptor implements HttpInterceptor{
     AppRoutingModule,
     ToastrModule.forRoot()
   ],
-  declarations: [AppComponent, AdminLayoutComponent, AuthLayoutComponent,  ParticulierComponent, PhaseComponent, ProfessionelComponent, RoleComponent, TacheComponent, TiersComponent],
+  declarations: [AppComponent, AdminLayoutComponent, AuthLayoutComponent,  ParticulierComponent, PhaseComponent, ProfessionelComponent, RoleComponent, TiersComponent],
   providers: [AppService,AffaireService,DocumentService, UserService, TribunalService, {provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi :true}],
   bootstrap: [AppComponent]
 })

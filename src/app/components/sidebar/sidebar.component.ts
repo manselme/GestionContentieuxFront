@@ -51,6 +51,13 @@ export const ROUTES: RouteInfo[] = [
     class: ""
   },
   {
+    path: "/taches",
+    title: "Taches",
+    rtlTitle: "ملف تعريفي للمستخدم",
+    icon: "icon-pin",
+    class: ""
+  },
+  {
     path: "/documents",
     title: "Documents",
     rtlTitle: "ملف تعريفي للمستخدم",

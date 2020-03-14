@@ -18,6 +18,7 @@ import { LoginComponent } from 'src/app/login/login.component';
 import { TribunalComponent } from 'src/app/pages/tribunal/tribunal.component';
 import { AffaireComponent } from 'src/app/pages/affaire/affaire.component';
 import { DocumentComponent } from 'src/app/pages/document/document.component';
+import {TacheComponent}  from 'src/app/pages/tache/tache.component';
 
 @NgModule({
   imports: [
@@ -35,6 +36,7 @@ import { DocumentComponent } from 'src/app/pages/document/document.component';
     DocumentComponent,
     TribunalComponent,
     AffaireComponent,
+    TacheComponent,
     TablesComponent,
     IconsComponent,
     TypographyComponent,
