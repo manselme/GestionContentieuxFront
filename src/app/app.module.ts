@@ -24,7 +24,7 @@ import { ProfessionelComponent } from './pages/professionel/professionel.compone
 import { RoleComponent } from './pages/role/role.component';
 import { TiersComponent } from './pages/tiers/tiers.component';
 import { TribunalService } from './service/tribunal.service';
-import { AccueilComponent } from './pages/accueil/accueil.component';
+
 
 @Injectable()
 export class XhrInterceptor implements HttpInterceptor{
