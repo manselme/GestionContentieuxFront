@@ -12,6 +12,7 @@ import { DocumentComponent } from 'src/app/pages/document/document.component';
 import { AffaireComponent } from 'src/app/pages/affaire/affaire.component';
 import { AccueilComponent } from 'src/app/pages/accueil/accueil.component';
 import { TacheComponent } from 'src/app/pages/tache/tache.component';
+import { TiersComponent } from 'src/app/pages/tiers/tiers.component';
 // import { RtlComponent } from "../../pages/rtl/rtl.component";
 
 export const AdminLayoutRoutes: Routes = [
@@ -27,6 +28,7 @@ export const AdminLayoutRoutes: Routes = [
   {path : "documents" , component: DocumentComponent},
   {path: "taches", component : TacheComponent},
   { path: "icons", component: IconsComponent },
+  { path: "tiers", component: TiersComponent },
   /*{ path: "tables", component: TablesComponent },
   { path: "typography", component: TypographyComponent },*/
   // { path: "rtl", component: RtlComponent }

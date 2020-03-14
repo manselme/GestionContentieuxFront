@@ -73,6 +73,13 @@ export const ROUTES: RouteInfo[] = [
     class: ""
   },
   {
+    path: "/tiers",
+    title: "Clients",
+    rtlTitle: "ملف تعريفي للمستخدم",
+    icon: "icon-shape-star",
+    class: ""
+  },
+  {
     path: "/icons",
     title: "Icons",
     rtlTitle: "الرموز",
