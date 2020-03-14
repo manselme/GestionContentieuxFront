@@ -15,13 +15,7 @@ export const ROUTES: RouteInfo[] = [
     icon: "icon-chart-pie-36",
     class: ""
   },
-  {
-    path: "/icons",
-    title: "Icons",
-    rtlTitle: "الرموز",
-    icon: "icon-atom",
-    class: ""
-  },
+
   {
     path: "/maps",
     title: "Maps",
@@ -37,9 +31,16 @@ export const ROUTES: RouteInfo[] = [
   },*/
 
   {
+    path: "/accueil",
+    title: "Accueil",
+    rtlTitle: "",
+    icon: "icon-tie-bow",
+    class: ""
+  },
+  {
     path: "/user",
     title: "User Profile",
-    rtlTitle: "ملف تعريفي للمستخدم",
+    rtlTitle: "",
     icon: "icon-single-02",
     class: ""
   },
@@ -69,6 +70,13 @@ export const ROUTES: RouteInfo[] = [
     title: "Tribunaux",
     rtlTitle: "ملف تعريفي للمستخدم",
     icon: "icon-world",
+    class: ""
+  },
+  {
+    path: "/icons",
+    title: "Icons",
+    rtlTitle: "الرموز",
+    icon: "icon-atom",
     class: ""
   },
   /*,

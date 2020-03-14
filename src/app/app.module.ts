@@ -24,6 +24,7 @@ import { ProfessionelComponent } from './pages/professionel/professionel.compone
 import { RoleComponent } from './pages/role/role.component';
 import { TiersComponent } from './pages/tiers/tiers.component';
 import { TribunalService } from './service/tribunal.service';
+import { AccueilComponent } from './pages/accueil/accueil.component';
 
 @Injectable()
 export class XhrInterceptor implements HttpInterceptor{
@@ -48,7 +49,7 @@ export class XhrInterceptor implements HttpInterceptor{
     AppRoutingModule,
     ToastrModule.forRoot()
   ],
-  declarations: [AppComponent, AdminLayoutComponent, AuthLayoutComponent,  ParticulierComponent, PhaseComponent, ProfessionelComponent, RoleComponent, TiersComponent],
+  declarations: [AppComponent, AdminLayoutComponent, AuthLayoutComponent],
   providers: [AppService,AffaireService,DocumentService, UserService, TribunalService, {provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi :true}],
   bootstrap: [AppComponent]
 })
