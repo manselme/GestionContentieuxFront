@@ -11,11 +11,11 @@ import { TribunalComponent } from "../../pages/tribunal/tribunal.component";
 import { DocumentComponent } from 'src/app/pages/document/document.component';
 import { AffaireComponent } from 'src/app/pages/affaire/affaire.component';
 import { AccueilComponent } from 'src/app/pages/accueil/accueil.component';
+import { TacheComponent } from 'src/app/pages/tache/tache.component';
 // import { RtlComponent } from "../../pages/rtl/rtl.component";
 
 export const AdminLayoutRoutes: Routes = [
   /*{ path: "dashboard", component: DashboardComponent },
-  { path: "icons", component: IconsComponent },
   { path: "maps", component: MapComponent },
   { path: "notifications", component: NotificationsComponent },*/
   { path:"", redirectTo: "/login", pathMatch:'full'},
@@ -24,7 +24,9 @@ export const AdminLayoutRoutes: Routes = [
   { path: "user", component: UserComponent },
   { path: "tribunals", component: TribunalComponent },
   {path: "affaires", component:AffaireComponent},
-  {path : "documents" , component: DocumentComponent}
+  {path : "documents" , component: DocumentComponent},
+  {path: "taches", component : TacheComponent},
+  { path: "icons", component: IconsComponent },
   /*{ path: "tables", component: TablesComponent },
   { path: "typography", component: TypographyComponent },*/
   // { path: "rtl", component: RtlComponent }

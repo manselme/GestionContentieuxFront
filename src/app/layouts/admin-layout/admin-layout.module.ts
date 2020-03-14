@@ -42,6 +42,7 @@ import { AccueilComponent } from 'src/app/pages/accueil/accueil.component';
     DocumentComponent,
     TribunalComponent,
     AffaireComponent,
+    TacheComponent,
     TablesComponent,
     IconsComponent,
     TypographyComponent,
@@ -50,7 +51,6 @@ import { AccueilComponent } from 'src/app/pages/accueil/accueil.component';
     PhaseComponent, 
     ProfessionelComponent, 
     RoleComponent, 
-    TacheComponent, 
     TiersComponent, 
     AccueilComponent
     // RtlComponent

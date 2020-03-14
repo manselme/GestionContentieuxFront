@@ -1,3 +1,46 @@
-<p>
-  tache works!
-</p>
+<div class=" content">
+  <div [hidden]="authenticated()">
+    <p>Connectez-vous pour afficher l'interface utilisateur</p>
+    <a href="/login">Retour</a>
+  </div>
+  <div [hidden]="!authenticated()">
+    <div class=" row">
+    </div>
+    <div class="row">
+      <div class=" col-md-12">
+        <div class=" card card-plain">
+          <div class=" card-header">
+            <h4 class=" card-title">Liste des taches</h4>
+          </div>
+          <div class=" card-body">
+            <div class=" table-responsive">
+              <table class=" table tablesorter" id="">
+                <thead class=" text-primary">
+                  <tr>
+                    <th>Nom</th>
+                    <th>Description</th>
+                    <th>Affaire</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let t of taches">
+                    <td>{{t.titre}}</td>
+                    <td>{{t.description}}</td>
+                    <td>{{t.affaire}}</td>
+                    <td>
+                      <button class=" btn btn-fill btn-danger " (click)="deleteTache(t)">Supprimer</button>
+                      &nbsp;
+                      <button class=" btn btn-fill btn-danger" (click)="updateTache(t)">Edit</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
