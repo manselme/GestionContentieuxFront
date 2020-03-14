@@ -26,4 +26,6 @@ export class AffaireService {
   public updateAffaire(id: number, affaire: any): Observable<any> {
     return this.httpClient.put(this.baseURL + "/" + id, affaire);
   }
-}
+  public archiverAffaire(id:number, affaire: any):Observable<any> {
+  return this.httpClient.put(this.baseURL + "/" + id , affaire);
+}}
