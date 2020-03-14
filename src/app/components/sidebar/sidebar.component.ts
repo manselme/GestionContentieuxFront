@@ -51,10 +51,17 @@ export const ROUTES: RouteInfo[] = [
     class: ""
   },
   {
+    path: "/documents",
+    title: "Documents",
+    rtlTitle: "ملف تعريفي للمستخدم",
+    icon: "icon-atom",
+    class: ""
+  },
+  {
     path: "/tribunals",
     title: "Tribunaux",
     rtlTitle: "ملف تعريفي للمستخدم",
-    icon: "icon-atom",
+    icon: "icon-world",
     class: ""
   },
   /*,

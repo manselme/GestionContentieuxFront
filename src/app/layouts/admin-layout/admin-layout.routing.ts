@@ -8,6 +8,8 @@ import { TablesComponent } from "../../pages/tables/tables.component";
 import { TypographyComponent } from "../../pages/typography/typography.component";
 import { LoginComponent } from 'src/app/login/login.component';
 import { TribunalComponent } from "../../pages/tribunal/tribunal.component";
+import { DocumentComponent } from 'src/app/pages/document/document.component';
+import { AffaireComponent } from 'src/app/pages/affaire/affaire.component';
 // import { RtlComponent } from "../../pages/rtl/rtl.component";
 
 export const AdminLayoutRoutes: Routes = [
@@ -19,6 +21,8 @@ export const AdminLayoutRoutes: Routes = [
   { path: "user", component: UserComponent },
   { path: 'login', component: LoginComponent},
   { path: "tribunals", component: TribunalComponent },
+  {path: "affaires", component:AffaireComponent},
+  {path : "documents" , component: DocumentComponent}
   /*{ path: "tables", component: TablesComponent },
   { path: "typography", component: TypographyComponent },*/
   // { path: "rtl", component: RtlComponent }
