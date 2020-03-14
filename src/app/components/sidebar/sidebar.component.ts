@@ -31,13 +31,6 @@ export const ROUTES: RouteInfo[] = [
     class: ""
   },
   {
-    path: "/accueil",
-    title: "Accueil",
-    rtlTitle: "",
-    icon: "icon-tie-bow",
-    class: ""
-  },
-  {
     path: "/user",
     title: "User Profile",
     rtlTitle: "",
