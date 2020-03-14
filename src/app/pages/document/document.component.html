@@ -1,38 +1,44 @@
-<div [hidden]="!authenticated()">
-  <div class=" row">
+<div class=" content">
+  <div [hidden]="authenticated()">
+    <p>Connectez-vous pour afficher l'interface utilisateur</p>
+    <a href="/users">Retour</a>
   </div>
-  <div class="row">
-    <div class=" col-md-12">
-      <div class=" card card-plain">
-        <div class=" card-header">
-          <h4 class=" card-title">Liste des documents</h4>
-        </div>
-        <div class=" card-body">
-          <div class=" table-responsive">
-            <table class=" table tablesorter" id="">
-              <thead class=" text-primary">
-                <tr>
-                  <th>Nom</th>
-                  <th>Description</th>
-                  <th>Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr *ngFor="let d of documents">
-                  <td>{{d.nom}}</td>
-                  <td>{{d.description}}</td>
-                  <td>
-                    <button class=" btn btn-fill btn-danger " (click)="deleteDocument(d)">Supprimer</button>
-                    &nbsp;
-                    <button class=" btn btn-fill btn-danger" (click)="updateDocument(d)">Edit</button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+  <div [hidden]="!authenticated()">
+    <div class=" row">
+    </div>
+    <div class="row">
+      <div class=" col-md-12">
+        <div class=" card card-plain">
+          <div class=" card-header">
+            <h4 class=" card-title">Liste des documents</h4>
+          </div>
+          <div class=" card-body">
+            <div class=" table-responsive">
+              <table class=" table tablesorter" id="">
+                <thead class=" text-primary">
+                  <tr>
+                    <th>Nom</th>
+                    <th>Description</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let d of documents">
+                    <td>{{d.nom}}</td>
+                    <td>{{d.description}}</td>
+                    <td>
+                      <button class=" btn btn-fill btn-danger " (click)="deleteDocument(d)">Supprimer</button>
+                      &nbsp;
+                      <button class=" btn btn-fill btn-danger" (click)="updateDocument(d)">Edit</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
+    </div>
   </div>
 </div>

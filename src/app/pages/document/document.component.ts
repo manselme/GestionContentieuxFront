@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DocumentService } from 'src/app/service/document.service';
+import { AppService } from 'src/app/app.service';
 
 @Component({
   selector: 'app-document',
@@ -11,13 +12,16 @@ export class DocumentComponent implements OnInit {
   document : Document = new Document();
 
   constructor(
-    private documentService : DocumentService
+    private documentService : DocumentService, 
+    private appService:AppService, 
   ) { }
 
   ngOnInit() {
     this.loadDocument();
   }
-
+  authenticated(){
+    return this.appService.authenticated;
+  }
   loadDocument(){
     this.documentService.getAllDocument().subscribe(data => {this.documents = data; console.log(this.documents)})
   }

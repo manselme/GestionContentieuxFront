@@ -1,7 +1,11 @@
-
+<div class=" content">
+  <div [hidden]="authenticated()">
+    <p>Connectez-vous pour afficher l'interface utilisateur</p>
+    <a href="/users">Retour</a>
+  </div>
   <div [hidden]="!authenticated()">
     <div class=" row">
-        </div>
+    </div>
     <div class="row">
       <div class=" col-md-12">
         <div class=" card card-plain">
@@ -38,3 +42,4 @@
 
     </div>
   </div>
+</div>
