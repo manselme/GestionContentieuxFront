@@ -14,21 +14,23 @@ export class TacheComponent implements OnInit {
   myForm: FormGroup;
 
   constructor(
-    private tacheService : TacheService, 
+    private tacheService : TacheService,
     private reactiveFormsModule: ReactiveFormsModule ,
     private formsModule: FormsModule,
-    private formBuilder: FormBuilder, 
-    private appService:AppService
+    private appService:AppService,
+    private formBuilder: FormBuilder
   ) { }
 
   ngOnInit() {
     this.loadTache();
     this.myForm = this.formBuilder.group({
-      titre: ['', Validators.required],
-      description: ['', Validators.required],
-      dateDebut: ['', Validators.required],
-      dateFin: ['', Validators.required],
-      statutAudience:['',Validators.required]
+      titre:['',Validators.required],
+      description:['',Validators.required],
+      dateCreation:['',Validators.required],
+      statutAudience:['',Validators.required],
+     // affaire:['',Validators.required],
+     dateDebut:['',Validators.required],
+     dateFin:['',Validators.required],
     });
   }
   authenticated(){
