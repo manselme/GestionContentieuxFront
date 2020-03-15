@@ -50,7 +50,7 @@ import { TiersComponent } from 'src/app/pages/tiers/tiers.component';
     PhaseComponent, 
     ProfessionelComponent, 
     RoleComponent, 
-    TiersComponent
+    TiersComponent,
     // RtlComponent
   ]
 })

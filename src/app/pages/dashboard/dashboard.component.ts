@@ -502,4 +502,7 @@ export class DashboardComponent implements OnInit {
     this.myChartData.data.datasets[0].data = this.data;
     this.myChartData.update();
   }
+  authenticated(){
+    return this.appService.authenticated;
+  }
 }

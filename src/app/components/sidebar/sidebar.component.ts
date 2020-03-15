@@ -26,7 +26,7 @@ export const ROUTES: RouteInfo[] = [
   {
     path: "/dashboard",
     title: "Dashboard",
-    rtlTitle: "لوحة القيادة",
+    rtlTitle: "",
     icon: "icon-chart-pie-36",
     class: ""
   },
