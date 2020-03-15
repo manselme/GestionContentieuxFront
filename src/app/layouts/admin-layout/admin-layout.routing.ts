@@ -16,12 +16,12 @@ import { TiersComponent } from 'src/app/pages/tiers/tiers.component';
 // import { RtlComponent } from "../../pages/rtl/rtl.component";
 
 export const AdminLayoutRoutes: Routes = [
-  /*{ path: "dashboard", component: DashboardComponent },
+  /*
   { path: "maps", component: MapComponent },
   { path: "notifications", component: NotificationsComponent },*/
   { path:"", redirectTo: "/login", pathMatch:'full'},
   { path: 'login', component: LoginComponent},
-  { path: "accueil", component: AccueilComponent},
+  { path: "dashboard", component: DashboardComponent },
   { path: "user", component: UserComponent },
   { path: "tribunals", component: TribunalComponent },
   {path: "affaires", component:AffaireComponent},
