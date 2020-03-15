@@ -19,7 +19,7 @@ credentials = {username: '', password:''};
 login(){
   this.appService.authenticate(this.credentials, 
     () =>{
-    this.router.navigateByUrl("/accueil");
+    this.router.navigateByUrl("/dashboard");
   });
   return false;
 }
