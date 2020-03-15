@@ -16,7 +16,7 @@
         </div>
 
         <div class=" card-body">
-          <form (ngSubmit)="createUser()" [formGroup] = "myForm">
+          <form (ngSubmit)="createUser()" [formGroup]="myForm">
             <div [hidden]="!authenticated()">
               <div class=" row">
                 <div class=" row">
@@ -77,48 +77,48 @@
             </div>
           </form>
 
-        <div [hidden]="!authenticated()">
+          <div [hidden]="!authenticated()">
 
-          <div class=" row">
+            <div class=" row">
 
-            <div class=" col-md-12">
-              <div class=" card card-plain">
-                <div class=" card-header">
-                  <h4 class=" card-title">Liste des utilisateurs</h4>
-                </div>
-                <div class=" card-body">
-                  <div class=" table-responsive">
-                    <table class=" table tablesorter" id="">
-                      <thead class=" text-primary">
-                        <tr>
-                          <th>Nom</th>
-                          <th>Prenom</th>
-                          <th>Email</th>
-                          <th>Username</th>
-                          <th>Password</th>
-                          <th>Actions</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr *ngFor="let u of users">
-                          <td>{{u.nomUtilisateur}}</td>
-                          <td>{{u.prenomUtilisateur}}</td>
-                          <td>{{u.email}}</td>
-                          <td>{{u.username}}</td>
-                          <td>{{u.password}}</td>
-                          <td>
-                            <button class=" btn btn-fill btn-danger " (click)="deleteUser(u)">Supprimer</button>
-                            &nbsp;
-                            <button class=" btn btn-fill btn-danger" (click)="editUser(u)">Editer</button>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
+              <div class=" col-md-12">
+                <div class=" card card-plain">
+                  <div class=" card-header">
+                    <h4 class=" card-title">Liste des utilisateurs</h4>
+                  </div>
+                  <div class=" card-body">
+                    <div class=" table-responsive">
+                      <table class=" table tablesorter" id="">
+                        <thead class=" text-primary">
+                          <tr>
+                            <th>Nom</th>
+                            <th>Prenom</th>
+                            <th>Email</th>
+                            <th>Username</th>
+                            <th>Password</th>
+                            <th>Actions</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let u of users">
+                            <td>{{u.nomUtilisateur}}</td>
+                            <td>{{u.prenomUtilisateur}}</td>
+                            <td>{{u.email}}</td>
+                            <td>{{u.username}}</td>
+                            <td>{{u.password}}</td>
+                            <td>
+                              <button class=" btn btn-fill btn-danger " (click)="deleteUser(u)">Supprimer</button>
+                              &nbsp;
+                              <button class=" btn btn-fill btn-danger" (click)="editUser(u)">Editer</button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
+            </div>
           </div>
         </div>
-      </div>
