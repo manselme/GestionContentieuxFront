@@ -14,7 +14,7 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { AppRoutingModule } from "./app-routing.module";
 import { ComponentsModule } from "./components/components.module";
 import { UserService } from './service/user.service';
-import { AffaireService } from './service/affaire.service';
+//import { AffaireService } from './service/affaire.service';
 import {DocumentService} from './service/document.service';
 import { AppService } from './app.service';
 <<<<<<< HEAD
@@ -47,7 +47,7 @@ export class XhrInterceptor implements HttpInterceptor{
     ToastrModule.forRoot(),
   ],
   declarations: [AppComponent, AdminLayoutComponent, AuthLayoutComponent],
-  providers: [AppService,AffaireService,DocumentService, UserService, TribunalService, {provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi :true}],
+  providers: [AppService,DocumentService,UserService, TribunalService, {provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi :true}],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

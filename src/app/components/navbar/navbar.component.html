@@ -37,6 +37,7 @@
             <span class=" d-lg-none d-md-block"> Search </span>
           </button>
         </li>
+        <div [hidden]="!authenticated()">
         <li class=" nav-item" ngbDropdown>
           <a
             class=" nav-link"
@@ -66,6 +67,8 @@
             </li>
           </ul>
         </li>
+      </div>
+      <div [hidden]="!authenticated()">
         <li class=" nav-item" ngbDropdown>
           <a
             class=" nav-link"
@@ -81,7 +84,7 @@
           </a>
           <ul class=" dropdown-navbar" ngbDropdownMenu>
             <li class=" nav-link">
-              <a class=" nav-item" href="javascript:void(0)" ngbDropdownItem>
+              <a class=" nav-item" href="/user#/user" ngbDropdownItem>
                 Profile
               </a>
             </li>
@@ -92,13 +95,14 @@
             </li>
             <li class=" dropdown-divider"></li>
             <li class=" nav-link">
-              <a class=" nav-item" (click)="logout()" href="javascript:void(0)" ngbDropdownItem>
+              <a class=" nav-item" (click)="logout()" href="/login" ngbDropdownItem>
                 Log out
               </a>
             </li>
           </ul>
         </li>
         <li class=" separator d-lg-none"></li>
+      </div>
       </ul>
     </div>
   </div>

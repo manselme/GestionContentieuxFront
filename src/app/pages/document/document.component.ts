@@ -30,7 +30,7 @@ export class DocumentComponent implements OnInit {
     this.documentService.deleteDocument(document.idDocument).subscribe(() => { this.loadDocument() })
   }
   createDocument() {
-    this.documentService.saveDocument(this.documents).subscribe(
+    this.documentService.saveDocument(this.document).subscribe(
       () => {
         this.loadDocument();
         this.document = new Document();
