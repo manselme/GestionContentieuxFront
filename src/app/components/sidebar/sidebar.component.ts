@@ -23,7 +23,6 @@ export const ROUTES: RouteInfo[] = [
     icon: "icon-bell-55",
     class: ""
   },*/
-
   {
     path: "/dashboard",
     title: "Dashboard",

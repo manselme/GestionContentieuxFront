@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TacheService } from 'src/app/service/tache.service';
 import { AppService } from 'src/app/app.service';
+import {  FormBuilder,FormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Tache } from 'src/app/model/tache';
-import { FormGroup, Validators,FormBuilder } from '@angular/forms';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-tache',

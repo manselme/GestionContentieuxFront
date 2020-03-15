@@ -17,6 +17,7 @@ import { UserService } from './service/user.service';
 //import { AffaireService } from './service/affaire.service';
 import {DocumentService} from './service/document.service';
 import { AppService } from './app.service';
+
 import { TribunalService } from './service/tribunal.service';
 
 @Injectable()
@@ -40,7 +41,7 @@ export class XhrInterceptor implements HttpInterceptor{
     RouterModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
   ],
   declarations: [AppComponent, AdminLayoutComponent, AuthLayoutComponent],
   providers: [AppService,DocumentService,UserService, TribunalService, {provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi :true}],
