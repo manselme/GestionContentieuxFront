@@ -24,6 +24,7 @@ import { ProfessionelComponent } from 'src/app/pages/professionel/professionel.c
 import { RoleComponent } from 'src/app/pages/role/role.component';
 import { TacheComponent } from 'src/app/pages/tache/tache.component';
 import { TiersComponent } from 'src/app/pages/tiers/tiers.component';
+import { AccueilComponent } from 'src/app/pages/accueil/accueil.component';
 
 @NgModule({
   imports: [
@@ -50,7 +51,8 @@ import { TiersComponent } from 'src/app/pages/tiers/tiers.component';
     PhaseComponent, 
     ProfessionelComponent, 
     RoleComponent, 
-    TiersComponent
+    TiersComponent, 
+    AccueilComponent
     // RtlComponent
   ]
 })

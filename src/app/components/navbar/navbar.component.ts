@@ -204,4 +204,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   ngOnDestroy(){
      window.removeEventListener("resize", this.updateColor);
   }
+  authenticated(){
+    return this.appService.authenticated;
+  }
 }

@@ -27,7 +27,7 @@ export class ProfessionelComponent implements OnInit {
     this.professionelService.deleteProfessionel(professionel.idProfessionel).subscribe(() => { this.loadProfessionel() })
   }
   createProfessionel() {
-    this.professionelService.saveProfessionel(this.professionels).subscribe(
+    this.professionelService.saveProfessionel(this.professionel).subscribe(
       () => {
         this.loadProfessionel();
         this.professionel = new Professionel();

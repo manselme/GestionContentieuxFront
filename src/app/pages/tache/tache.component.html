@@ -1,58 +1,8 @@
 <div class=" content">
   <div [hidden]="authenticated()">
     <p>Connectez-vous pour afficher l'interface utilisateur</p>
-    <a href="/taches">Retour</a>
+    <a href="/login">Retour</a>
   </div>
-  <div [hidden]="!authenticated()">
-    <div class="col-lg-10 col-md-2">
-    <div class=" card">
-      <div class=" card-header">
-        <h5 class=" title">Ajouter une tache</h5>
-      </div>
-      <div class=" card-body">
-        <div class="table-full-width">
-          <form [formGroup]="myForm" (ngsubmit)="createTache(myForm)">
-            <div class=" row">
-              <div class=" col-md-5 pr-md-1">
-                <label>Titre</label>
-                <input type="text" class="form-control" [(ngModel)]="tache.titre" formControlName="titre" />
-              </div>
-              <div class=" col-md-5 pr-md-1">
-                <label>description</label>
-                <input type="text" class="form-control" [(ngModel)]="tache.description" formControlName="description" />
-              </div>
-            </div>
-            <div class=" row">
-              <div class=" col-md-5 pr-md-1">
-                <label>date de début</label>
-                <input type="date" class="form-control" [(ngModel)]="tache.dateDebut" formControlName="dateDebut" />
-              </div>
-              <div class=" col-md-5 pr-md-1">
-                <label>date de fin</label>
-                <input type="date" class="form-control" [(ngModel)]="tache.dateFin" formControlName="dateFin" />
-              </div>
-            </div>
-            <div class=" row">
-              <div class=" col-md-5 pr-md-1">
-                <label>statut de l'audience</label>
-                <input type="text" class="form-control" [(ngModel)]="tache.statutAudience"
-                  formControlName="statutAudience" /><br>
-              </div>
-              <div class=" col-md-5 pr-md-1">
-                <label>Affaire</label>
-                <!--<input type="text" class="form-control" [(ngModel)]="tache.affaire" formControlName="affaire" /><br>-->
-              </div>
-            </div>
-
-            <button class="btn btn-success animation-on-hover">Ajouter</button>
-          </form>
-        </div>
-      </div>
-    </div>
-    </div>
-  </div>
-
-
   <div [hidden]="!authenticated()">
     <div class=" row">
     </div>
