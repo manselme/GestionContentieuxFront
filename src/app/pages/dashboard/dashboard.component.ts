@@ -4,10 +4,7 @@ import { AppService } from 'src/app/app.service';
 import { TacheService } from 'src/app/service/tache.service';
 import { Utilisateur } from 'src/app/model/utilisateur';
 import { UserService } from 'src/app/service/user.service';
-<<<<<<< HEAD
-=======
 import { LoginComponent } from 'src/app/login/login.component';
->>>>>>> 8e34253377871c1723a1a30b7290264597494a9d
 
 @Component({
   selector: "app-dashboard",
@@ -23,30 +20,19 @@ export class DashboardComponent implements OnInit {
   public clicked1: boolean = false;
   public clicked2: boolean = false;
   taches : any[];
-<<<<<<< HEAD
-  user : Utilisateur;
-=======
   credentials = LoginComponent["credentials"];
   user : Utilisateur = new Utilisateur();
->>>>>>> 8e34253377871c1723a1a30b7290264597494a9d
 
   constructor(
     private appService : AppService,
     private tacheService : TacheService,
-<<<<<<< HEAD
-    private userService : UserService
-=======
     private userService : UserService,
->>>>>>> 8e34253377871c1723a1a30b7290264597494a9d
   ) {}
 
   ngOnInit() {
     this.tacheService.getAllTache().subscribe(data => {this.taches = data; console.log(this.taches)})
-<<<<<<< HEAD
-=======
     console.log("credentials : "+this.credentials)
     this.userService.getUtilisateurByUsername(this.credentials.username).subscribe(user => {this.user = user})
->>>>>>> 8e34253377871c1723a1a30b7290264597494a9d
 
     var gradientChartOptionsConfigurationWithTooltipBlue: any = {
       maintainAspectRatio: false,
@@ -502,7 +488,5 @@ export class DashboardComponent implements OnInit {
     this.myChartData.data.datasets[0].data = this.data;
     this.myChartData.update();
   }
-  authenticated(){
-    return this.appService.authenticated;
-  }
+
 }
