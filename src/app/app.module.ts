@@ -14,17 +14,11 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { AppRoutingModule } from "./app-routing.module";
 import { ComponentsModule } from "./components/components.module";
 import { UserService } from './service/user.service';
-import { AffaireService } from './service/affaire.service';
+//import { AffaireService } from './service/affaire.service';
 import {DocumentService} from './service/document.service';
 import { AppService } from './app.service';
 
-import { ParticulierComponent } from './pages/particulier/particulier.component';
-import { PhaseComponent } from './pages/phase/phase.component';
-import { ProfessionelComponent } from './pages/professionel/professionel.component';
-import { RoleComponent } from './pages/role/role.component';
-import { TiersComponent } from './pages/tiers/tiers.component';
 import { TribunalService } from './service/tribunal.service';
-
 
 @Injectable()
 export class XhrInterceptor implements HttpInterceptor{
@@ -47,10 +41,10 @@ export class XhrInterceptor implements HttpInterceptor{
     RouterModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
   ],
   declarations: [AppComponent, AdminLayoutComponent, AuthLayoutComponent],
-  providers: [AppService,AffaireService,DocumentService, UserService, TribunalService, {provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi :true}],
+  providers: [AppService,DocumentService,UserService, TribunalService, {provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi :true}],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -27,7 +27,7 @@ export class ParticulierComponent implements OnInit {
     this.particulierService.deleteParticulier(particulier.idParticulier).subscribe(() => { this.loadParticulier() })
   }
   createParticulier() {
-    this.particulierService.saveParticulier(this.particuliers).subscribe(
+    this.particulierService.saveParticulier(this.particulier).subscribe(
       () => {
         this.loadParticulier();
         this.particulier = new Particulier();
