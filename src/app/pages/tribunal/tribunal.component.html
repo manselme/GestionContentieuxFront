@@ -5,16 +5,17 @@
       <div class=" card">
 
         <div [hidden]="!authenticated()">
-        <div class=" card-header">
-          <h5 class=" title">Ajouter un Tribunal</h5>
+          <div class=" card-header">
+            <h5 class=" title">Ajouter un Tribunal</h5>
+          </div>
         </div>
-      </div>
 
         <div class=" card-body">
-            <form (ngSubmit)="createTribunal()">
-              <div [hidden]="!authenticated()">
-                
+          <form (ngSubmit)="createTribunal()">
+            <div [hidden]="!authenticated()">
+
               <div class=" row">
+
                 <div class=" col-md-6 pr-md-1">
                   <div class=" form-group">
                     <label> Nom Tribunal </label>
@@ -28,7 +29,7 @@
                     <input class=" form-control" type="text" [(ngModel)]="tribunal.adresse" name="adresse" />
                   </div>
                 </div>
-                
+
                 <div class=" col-md-6 pl-md-1">
                   <div class=" form-group">
                     <label> Région </label>
@@ -51,39 +52,42 @@
                     <button class=" btn btn-fill btn-danger" type="submit">Ajouter</button>
                   </div>
                 </div>
+
               </div>
+
             </div>
-              <div class="row">
-                <div class=" col-md-12">
-                  <div class=" card card-plain">
-                    <div class=" card-header">
-                      <h4 class=" card-title">Liste des tribunaux</h4>
-                    </div>
-                    <div class=" card-body">
-                      <div class=" table">
-                        <table class=" table tablesorter" id="">
-                          <thead class=" text-primary">
-                            <tr>
-                              <th>Nom Tribunal</th>
-                              <th>Adresse</th>
-                              <th>Région</th>
-                              <th>Téléphone</th>
-                              <th>Fax</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr *ngFor="let t of tribunals">
-                              <td>{{t.nomTribunal}}</td>
-                              <td>{{t.adresse}}</td>
-                              <td>{{t.region}}</td>
-                              <td>{{t.tel}}</td>
-                              <td>{{t.fax}}</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
+
+            <div class="row">
+              <div class=" col-md-12">
+                <div class=" card card-plain">
+                  <div class=" card-header">
+                    <h4 class=" card-title">Liste des tribunaux</h4>
+                  </div>
+                  <div class=" card-body">
+                    <div class=" table">
+                      <table class=" table tablesorter" id="">
+                        <thead class=" text-primary">
+                          <tr>
+                            <th>Nom Tribunal</th>
+                            <th>Adresse</th>
+                            <th>Région</th>
+                            <th>Téléphone</th>
+                            <th>Fax</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let t of tribunals">
+                            <td>{{t.nomTribunal}}</td>
+                            <td>{{t.adresse}}</td>
+                            <td>{{t.region}}</td>
+                            <td>{{t.tel}}</td>
+                            <td>{{t.fax}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
                     </div>
                   </div>
-                
+                </div>
+
               </div>
-          </div>
+            </div>

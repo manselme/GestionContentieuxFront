@@ -1,9 +1,5 @@
 import { Component, OnInit } from "@angular/core";
 import Chart from 'chart.js';
-import { AppService } from 'src/app/app.service';
-import { TacheService } from 'src/app/service/tache.service';
-import { Utilisateur } from 'src/app/model/utilisateur';
-import { UserService } from 'src/app/service/user.service';
 
 @Component({
   selector: "app-dashboard",
@@ -18,18 +14,10 @@ export class DashboardComponent implements OnInit {
   public clicked: boolean = true;
   public clicked1: boolean = false;
   public clicked2: boolean = false;
-  taches : any[];
-  user : Utilisateur;
 
-  constructor(
-    private appService : AppService,
-    private tacheService : TacheService,
-    private userService : UserService
-  ) {}
+  constructor() {}
 
   ngOnInit() {
-    this.tacheService.getAllTache().subscribe(data => {this.taches = data; console.log(this.taches)})
-
     var gradientChartOptionsConfigurationWithTooltipBlue: any = {
       maintainAspectRatio: false,
       legend: {
@@ -475,11 +463,6 @@ export class DashboardComponent implements OnInit {
     });
 
   }
-
-  authenticated(){
-    return this.appService.authenticated;
-  }
-
   public updateOptions() {
     this.myChartData.data.datasets[0].data = this.data;
     this.myChartData.update();
