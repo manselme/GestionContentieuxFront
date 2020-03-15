@@ -1,106 +1,157 @@
 <div class=" content">
   <div [hidden]="authenticated()">
     <p>Connectez-vous pour afficher l'interface utilisateur</p>
-    <a href="/tiers">Retour</a>
+    <a href="/Particuliers">Retour</a>
   </div>
 
   <div [hidden]="!authenticated()">
-  <div class=" row">
-    <div class=" col-md-8">
-      <div class=" card">
-        <div class=" card-header">
-          <h5 class=" title">Ajouter un Client</h5>
-        </div>
-        <div class=" card-body">
-          <form (ngSubmit)="createTier()">
-            <div class=" row">
-              <div class=" col-md-6 pr-md-1">
-                <div class=" form-group">
-                  <label> Adresse </label>
-                  <input class=" form-control" type="text" [(ngModel)]="tier.adresse" name="adresse" />
-                </div>
-              </div>
-              <div class=" col-md-6 pl-md-1">
-                <div class=" form-group">
-                  <label> Téléphone </label>
-                  <input class=" form-control" type="text" [(ngModel)]="tier.tel" name="tel" />
-                </div>
-              </div>
-              <div class=" col-md-6 pl-md-1">
-                <div class=" form-group">
-                  <label> Domaine </label><br>
-                  <input type="radio" [(ngModel)]="tier.type" name="Particulier"> Particulier
-                  <input type="radio" [(ngModel)]="tier.type" name="Professionel"> Professionnel
-                </div>
-              </div>
-            </div>
-            <div class=" card-footer">
-              <button class=" btn btn-fill btn-danger" type="submit">Ajouter</button>
-            </div>
-          </form>
-        </div>
+    <div class=" row">
+      <div>
+        <h2>Ajouter un Client</h2>
+      </div>
+    </div>
 
-        <div class="row">
-          <div class=" col-md-12">
-            <div class=" card card-plain">
-              <div class=" card-header">
-                <h4 class=" card-title">Liste des Particuliers</h4>
-              </div>
-              <div class=" card-body">
-                <div class=" table-responsive">
-                  <table class=" table tablesorter" id="">
-                    <thead class=" text-primary">
-                      <tr>
-                        <th>Adresse</th>
-                        <th>Téléphone</th>
-                        <th>CIN</th>
-                        <th>Nom</th>
-                        <th>Prénom</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr *ngFor="let  of tier">
-                        <td>{{t.adresse}}</td>
-                        <td>{{t.tel}}</td>
-                        <td>{{t.cin}}</td>
-                        <td>{{t.nom}}</td>
-                        <td>{{t.prenom}}</td>
-                      </tr>
-                    </tbody>
-                  </table>
+    <div class=" row">
+      <div class=" col-lg-6 col-md-6">
+        <div class=" card card-Particulier">
+          <div class=" card-header">
+            <h4 class=" card-title">Particulier</h4>
+          </div>
+          <div class=" card-body">
+            <form (ngSubmit)="createParticulier()">
+              <div class=" row">
+                <div class=" col-md-6 pr-md-1">
+                  <div class=" form-group">
+                    <label> Nom </label>
+                    <input class=" form-control" type="text" [(ngModel)]="particulier.nom" name="nom" />
+                  </div>
+                </div>
+                <div class=" col-md-6 pl-md-1">
+                  <div class=" form-group">
+                    <label> Prénom </label>
+                    <input class=" form-control" type="text" [(ngModel)]="particulier.prenom" name="prenom" />
+                  </div>
                 </div>
               </div>
-            </div>
+              
+              <div class="row">
+                <div class=" col-md-12 pl-md-1 pr-md-1">
+                  <div class=" form-group">
+                    <label> Adresse </label><br>
+                    <input class=" form-control" type="text" [(ngModel)]="particulier.adresse" name="adresse" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class=" col-md-12 pr-md-1">
+                  <div class=" form-group">
+                    <label> CIN </label><br>
+                    <input class=" form-control" type="text" [(ngModel)]="particulier.CIN" name="CIN" />
+                  </div>
+                </div>
+                <div class=" col-md-12 pr-md-1">
+                  <div class=" form-group">
+                    <label> Télephone </label><br>
+                    <input class=" form-control" type="number" [(ngModel)]="particulier.tel" name="tel" />
+                  </div>
+                </div>
+              </div>
+              <div class=" card-footer">
+                <button class=" btn btn-fill btn-danger" type="submit">Ajouter</button>
+              </div>
+            </form>
           </div>
         </div>
-        <div class="row">
-          <div class=" col-md-12">
-            <div class=" card card-plain">
-              <div class=" card-header">
-                <h4 class=" card-title">Liste des Professionnels</h4>
-              </div>
-              <div class=" card-body">
-                <div class=" table-responsive">
-                  <table class=" table tablesorter" id="">
-                    <thead class=" text-primary">
-                      <tr>
-                        <th>Adresse</th>
-                        <th>Téléphone</th>
-                        <th>Raison Sociale</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr *ngFor="let t of tiers">
-                        <td>{{t.adresse}}</td>
-                        <td>{{t.tel}}</td>
-                        <td>{{t.raisonSocial}}</td>
-                      </tr>
-                    </tbody>
-                  </table>
+      </div>
+
+      <div class=" col-lg-6 col-md-6">
+        <div class=" card card-Professionel">
+          <div class=" card-header">
+            <h4 class=" card-title">Professionnel</h4>
+          </div>
+          <div class=" card-body">
+            <form (ngSubmit)="createProfessionel()">
+              <div class=" row">
+                <div class=" col-md-6 pr-md-1">
+                  <div class=" form-group">
+                    <label> Nom </label>
+                    <input class=" form-control" type="text" [(ngModel)]="particulier.nom" name="nom" />
+                  </div>
                 </div>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>
     </div>
+
+
+    <div class="row">
+      <div class=" col-md-6 col-lg-6">
+        <div class=" card card-plain">
+          <div class=" card-header">
+            <h4 class=" card-title">Liste des Particuliers</h4>
+          </div>
+          <div class=" card-body">
+            <div class=" table-responsive">
+              <table class=" table tablesorter" id="">
+                <thead class=" text-primary">
+                  <tr>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>CIN</th>
+                    <th>Adresse</th>
+                    <th>Télephone</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let p of particuliers">
+                    <td>{{p.nom}}</td>
+                    <td>{{p.prenom}}</td>
+                    <td>{{p.CIN}}</td>
+                    <td>{{p.adresse}}</td>
+                    <td>{{p.tel}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class=" col-md-6 col-lg-6">
+        <div class=" card card-plain">
+          <div class=" card-header">
+            <h4 class=" card-title">Liste des Professionnels</h4>
+          </div>
+          <div class=" card-body">
+            <div class=" table-responsive">
+              <table class=" table tablesorter" id="">
+                <thead class=" text-primary">
+                  <tr>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>CIN</th>
+                    <th>Adresse</th>
+                    <th>Télephone</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let p of particuliers">
+                    <td>{{p.nom}}</td>
+                    <td>{{p.prenom}}</td>
+                    <td>{{p.CIN}}</td>
+                    <td>{{p.adresse}}</td>
+                    <td>{{p.tel}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -2,36 +2,58 @@ import { Component, OnInit } from '@angular/core';
 import { TiersService } from 'src/app/service/tiers.service';
 import { Tiers } from 'src/app/model/tiers';
 import { AppService } from 'src/app/app.service';
+import { ProfessionelService } from 'src/app/service/professionel.service';
+import { ParticulierService } from 'src/app/service/particulier.service';
+import { Professionel } from 'src/app/model/professionel';
+import { Particulier } from 'src/app/model/particulier';
 
 @Component({
   selector: 'app-tiers',
   templateUrl: './tiers.component.html'
 })
 export class TiersComponent implements OnInit {
-  tiers : any[];
-  tier : Tiers = new Tiers();
+  professionels : any[];
+  professionel : Professionel;
+  particuliers : any[];
+  particulier : Particulier;
+  tier : Tiers;
+
   constructor(
     private tiersService : TiersService, 
-    private appService : AppService
+    private appService : AppService,
+    private professionelService : ProfessionelService,
+    private particulierService : ParticulierService
   ) { }
 
   ngOnInit() {
-    this.loadTier();
+    this.loadParticulier;
+    this.loadProfessionel;
   }
 
   authenticated(){
     return this.appService.authenticated;
   }
 
-  loadTier(){
-    this.tiersService.getAllTiers().subscribe(data => {this.tiers = data; console.log(this.tiers)})
+  loadParticulier(){
+    this.particulierService.getAllParticulier().subscribe(data => {this.particuliers = data; console.log(this.particuliers)})
+  }
+  loadProfessionel(){
+    this.professionelService.getAllProfessionel().subscribe(data => {this.professionels = data; console.log(this.particuliers)})
   }
 
-  createTier() {
-    this.tiersService.saveTiers(this.tier).subscribe(
+  createParticulier() {
+    this.particulierService.saveParticulier(this.particulier).subscribe(
       () => {
-        this.loadTier();
-        this.tier = new Tiers();
+        this.loadParticulier();
+        this.particulier = new Particulier();
+      }
+    )
+  }
+  createProfessionel(){
+    this.professionelService.saveProfessionel(this.professionel).subscribe(
+      () => {
+        this.loadProfessionel();
+        this.professionel = new Professionel();
       }
     )
   }
