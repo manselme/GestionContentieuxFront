@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { TacheService } from 'src/app/service/tache.service';
 import { AppService } from 'src/app/app.service';
 import { Tache } from 'src/app/model/tache';
+import { FormGroup, Validators,FormBuilder } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-tache',
@@ -10,14 +12,27 @@ import { Tache } from 'src/app/model/tache';
 export class TacheComponent implements OnInit {
   taches : any[]
   tache : Tache = new Tache();
+  myForm: FormGroup;
 
   constructor(
     private tacheService : TacheService,
-    private appService:AppService
+    private reactiveFormsModule: ReactiveFormsModule ,
+    private formsModule: FormsModule,
+    private appService:AppService,
+    private formBuilder: FormBuilder
   ) { }
 
   ngOnInit() {
     this.loadTache();
+    this.myForm = this.formBuilder.group({
+      titre:['',Validators.required],
+      description:['',Validators.required],
+      dateCreation:['',Validators.required],
+      statutAudience:['',Validators.required],
+     // affaire:['',Validators.required],
+     dateDebut:['',Validators.required],
+     dateFin:['',Validators.required],
+    });
   }
   authenticated(){
     return this.appService.authenticated;
