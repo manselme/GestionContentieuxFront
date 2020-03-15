@@ -4,6 +4,7 @@ import { AppService } from 'src/app/app.service';
 import { TacheService } from 'src/app/service/tache.service';
 import { Utilisateur } from 'src/app/model/utilisateur';
 import { UserService } from 'src/app/service/user.service';
+import { LoginComponent } from 'src/app/login/login.component';
 
 @Component({
   selector: "app-dashboard",
@@ -19,16 +20,19 @@ export class DashboardComponent implements OnInit {
   public clicked1: boolean = false;
   public clicked2: boolean = false;
   taches : any[];
-  user : Utilisateur;
+  credentials = LoginComponent["credentials"];
+  user : Utilisateur = new Utilisateur();
 
   constructor(
     private appService : AppService,
     private tacheService : TacheService,
-    private userService : UserService
+    private userService : UserService,
   ) {}
 
   ngOnInit() {
     this.tacheService.getAllTache().subscribe(data => {this.taches = data; console.log(this.taches)})
+    console.log("credentials : "+this.credentials)
+    this.userService.getUtilisateurByUsername(this.credentials.username).subscribe(user => {this.user = user})
 
     var gradientChartOptionsConfigurationWithTooltipBlue: any = {
       maintainAspectRatio: false,
