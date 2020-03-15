@@ -20,8 +20,8 @@ export class DashboardComponent implements OnInit {
   public clicked1: boolean = false;
   public clicked2: boolean = false;
   taches : any[];
-  credentials = LoginComponent["credentials"];
   user : Utilisateur = new Utilisateur();
+  logUsername:String;
 
   constructor(
     private appService : AppService,
@@ -31,8 +31,11 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.tacheService.getAllTache().subscribe(data => {this.taches = data; console.log(this.taches)})
-    console.log("credentials : "+this.credentials)
-    this.userService.getUtilisateurByUsername(this.credentials.username).subscribe(user => {this.user = user})
+    console.log("/dashboard => 1 logUsername : "+this.logUsername)
+    this.logUsername = this.getLogUsername();
+    console.log("/dashboard => 2 logUsername : "+this.logUsername)
+    this.userService.getUtilisateurByUsername(this.logUsername).subscribe(data => {this.user = data})
+    console.log("user : "+this.user.username)
 
     var gradientChartOptionsConfigurationWithTooltipBlue: any = {
       maintainAspectRatio: false,
@@ -481,7 +484,10 @@ export class DashboardComponent implements OnInit {
   }
 
   authenticated(){
-    return this.appService.authenticated;
+    return this.appService.authenticated ;
+  }
+  getLogUsername(){
+    return this.appService.logUsername;
   }
 
   public updateOptions() {

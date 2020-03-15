@@ -7,6 +7,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class AppService {
 
   authenticated = false;
+  logUsername : String;
 
   constructor(private httpClient: HttpClient) { }
 
@@ -17,6 +18,8 @@ export class AppService {
     this.httpClient.get('http://localhost:9090/login/user', {headers: headers}).subscribe(response => {
       if (response['username']) {
         this.authenticated = true;
+        this.logUsername = credentials.username;
+        console.log("/login => logUsername :" +this.logUsername);
       } else {
         this.authenticated = false;
       }

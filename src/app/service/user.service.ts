@@ -12,18 +12,18 @@ export class UserService {
     return this.httpClient.get(this.baseURL);
   }
   public deleteUtilisateur(id: number): Observable<any> {
-    return this.httpClient.delete(this.baseURL + "/" + id)
+    return this.httpClient.delete(this.baseURL + "/id/" + id)
   }
   public saveUtilisateur(user: any): Observable<any> {
     return this.httpClient.post(this.baseURL, user);
   }
   public getUtilisateur(id: number): Observable<any> {
-    return this.httpClient.get(this.baseURL + "/" + id);
+    return this.httpClient.get(this.baseURL + "/id/" + id);
   }
   public getUtilisateurByUsername(username : String): Observable<any> {
-    return this.httpClient.get(this.baseURL + "/" + username);
+    return this.httpClient.get(this.baseURL + "/username/" + username);
   }
   public updateUtilisateur(id: number, user: any): Observable<any> {
-    return this.httpClient.put(this.baseURL + "/" + id, user);
+    return this.httpClient.put(this.baseURL + "/id/" + id, user);
   }
 }
