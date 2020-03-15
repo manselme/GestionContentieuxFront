@@ -10,10 +10,6 @@ import { LoginComponent } from 'src/app/login/login.component';
 import { TribunalComponent } from "../../pages/tribunal/tribunal.component";
 import { DocumentComponent } from 'src/app/pages/document/document.component';
 import { AffaireComponent } from 'src/app/pages/affaire/affaire.component';
-<<<<<<< HEAD
-//import { AccueilComponent } from 'src/app/pages/accueil/accueil.component';
-=======
->>>>>>> a9e8f6d75a2308c5cd021bbf4f1f592daaed9e64
 import { TacheComponent } from 'src/app/pages/tache/tache.component';
 import { TiersComponent } from 'src/app/pages/tiers/tiers.component';
 // import { RtlComponent } from "../../pages/rtl/rtl.component";

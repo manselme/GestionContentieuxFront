@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TiersService } from 'src/app/service/tiers.service';
 import { Tiers } from 'src/app/model/tiers';
 import { AppService } from 'src/app/app.service';
+import { FormBuilder,FormGroup, Validators } from '@angular/forms';
 import { ProfessionelService } from 'src/app/service/professionel.service';
 import { ParticulierService } from 'src/app/service/particulier.service';
 import { Professionel } from 'src/app/model/professionel';
@@ -13,21 +14,36 @@ import { Particulier } from 'src/app/model/particulier';
 })
 export class TiersComponent implements OnInit {
   professionels : any[];
-  professionel : Professionel;
+  professionel : Professionel = new Professionel();
   particuliers : any[];
-  particulier : Particulier;
+  particulier : Particulier = new Particulier();
   tier : Tiers;
+  particulierForm : FormGroup;
+  professionelForm : FormGroup;
 
   constructor(
-    private tiersService : TiersService, 
     private appService : AppService,
     private professionelService : ProfessionelService,
-    private particulierService : ParticulierService
+    private particulierService : ParticulierService,
+    private formBuilder : FormBuilder
   ) { }
 
   ngOnInit() {
-    this.loadParticulier;
-    this.loadProfessionel;
+    this.loadParticulier();
+    this.loadProfessionel();
+    this.particulierForm = this.formBuilder.group({
+      nom:['', Validators.required],
+      prenom:['', Validators.required],
+      CIN:['', Validators.required],
+      adresse:['', Validators.required],
+      tel:['', Validators.required]
+    });
+    this.professionelForm = this.formBuilder.group({
+      raisonSocial:['', Validators.required],
+      CIN:['', Validators.required],
+      adresse:['', Validators.required],
+      tel:['', Validators.required]
+    });
   }
 
   authenticated(){

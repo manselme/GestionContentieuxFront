@@ -18,18 +18,18 @@
             <h4 class=" card-title">Particulier</h4>
           </div>
           <div class=" card-body">
-            <form (ngSubmit)="createParticulier()">
+            <form (ngSubmit)="createParticulier()" [formGroup]="particulierForm">
               <div class=" row">
                 <div class=" col-md-6 pr-md-1">
                   <div class=" form-group">
                     <label> Nom </label>
-                    <input class=" form-control" type="text" [(ngModel)]="particulier.nom" name="nom" />
+                    <input class=" form-control" type="text" [(ngModel)]="particulier.nom" formControlName="nom" />
                   </div>
                 </div>
                 <div class=" col-md-6 pl-md-1">
                   <div class=" form-group">
                     <label> Prénom </label>
-                    <input class=" form-control" type="text" [(ngModel)]="particulier.prenom" name="prenom" />
+                    <input class=" form-control" type="text" [(ngModel)]="particulier.prenom" formControlName="prenom" />
                   </div>
                 </div>
               </div>
@@ -38,7 +38,7 @@
                 <div class=" col-md-12 pl-md-1 pr-md-1">
                   <div class=" form-group">
                     <label> Adresse </label><br>
-                    <input class=" form-control" type="text" [(ngModel)]="particulier.adresse" name="adresse" />
+                    <input class=" form-control" type="text" [(ngModel)]="particulier.adresse" formControlName="adresse" />
                   </div>
                 </div>
               </div>
@@ -47,13 +47,13 @@
                 <div class=" col-md-12 pr-md-1">
                   <div class=" form-group">
                     <label> CIN </label><br>
-                    <input class=" form-control" type="text" [(ngModel)]="particulier.CIN" name="CIN" />
+                    <input class=" form-control" type="text" [(ngModel)]="particulier.CIN" formControlName="CIN" />
                   </div>
                 </div>
                 <div class=" col-md-12 pr-md-1">
                   <div class=" form-group">
                     <label> Télephone </label><br>
-                    <input class=" form-control" type="number" [(ngModel)]="particulier.tel" name="tel" />
+                    <input class=" form-control" type="number" [(ngModel)]="particulier.tel" formControlName="tel" />
                   </div>
                 </div>
               </div>
@@ -71,12 +71,12 @@
             <h4 class=" card-title">Professionnel</h4>
           </div>
           <div class=" card-body">
-            <form (ngSubmit)="createProfessionel()">
+            <form (ngSubmit)="createProfessionel()" [formGroup]="professionelForm">
               <div class=" row">
                 <div class=" col-md-6 pr-md-1">
                   <div class=" form-group">
-                    <label> Nom </label>
-                    <input class=" form-control" type="text" [(ngModel)]="particulier.nom" name="nom" />
+                    <label> Nom de la Société </label>
+                    <input class=" form-control" type="text" [(ngModel)]="particulier.nom" formControlName="raisonSocial" />
                   </div>
                 </div>
               </div>
