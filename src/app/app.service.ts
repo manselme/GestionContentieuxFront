@@ -19,7 +19,6 @@ export class AppService {
       if (response['username']) {
         this.authenticated = true;
         this.logUsername = credentials.username;
-        console.log("/login => logUsername :" +this.logUsername);
       } else {
         this.authenticated = false;
       }

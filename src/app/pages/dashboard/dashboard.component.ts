@@ -31,11 +31,8 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.tacheService.getAllTache().subscribe(data => {this.taches = data; console.log(this.taches)})
-    console.log("/dashboard => 1 logUsername : "+this.logUsername)
     this.logUsername = this.getLogUsername();
-    console.log("/dashboard => 2 logUsername : "+this.logUsername)
     this.userService.getUtilisateurByUsername(this.logUsername).subscribe(data => {this.user = data})
-    console.log("user : "+this.user.username)
 
     var gradientChartOptionsConfigurationWithTooltipBlue: any = {
       maintainAspectRatio: false,

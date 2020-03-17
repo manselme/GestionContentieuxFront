@@ -3,6 +3,65 @@
     <p>Connectez-vous pour afficher l'interface utilisateur</p>
     <a href="/affaires">Retour</a>
   </div>
+
+  <div [hidden]="!authenticated()">
+    <div class="col-lg-10 col-md-2">
+      <div class=" card">
+        <div class=" card-header">
+          <h5 class=" title">Ajouter une affaire</h5>
+        </div>
+
+        <div class=" card-body">
+          <div class="table-full-width">
+
+            <form (ngSubmit)="createaffaire()" [formGroup]="myForm">
+
+              <div class=" row">
+                <div class=" col-md-5 pr-md-1">
+                  <label>Titre</label>
+                  <input type="text" class="form-control" [(ngModel)]="affaire.titre" formControlName="titre" />
+                </div>
+                <div class=" col-md-5 pr-md-1">
+                  <label>reference</label>
+                  <input type="text" class="form-control" [(ngModel)]="affaire.reference" formControlName="reference" />
+                </div>
+              </div>
+
+              <div class=" row">
+                <div class=" col-md-5 pr-md-1">
+                  <label>statut</label>
+                  <input type="text" class="form-control" [(ngModel)]="affaire.statut" formControlName="statut" />
+                </div>
+                <div class=" col-md-5 pr-md-1">
+                  <label>Phases</label>
+                  <input type="text" class="form-control" [(ngModel)]="affaire.phases" formControlName="phases" />
+                </div>
+              </div>
+
+              <div class=" row">
+                <div class=" col-md-5 pr-md-1">
+                  <div class=" form-group">
+                    <label>Tribunal</label><br>
+                    <input type="text" class="form-control" [(ngModel)]="affaire.tribunal" formControlName="tribunal" />
+                    <div class=" col-md-5 pr-md-1">
+                      <label>affaires</label>
+                      <input type="text" class="form-control" [(ngModel)]="affaire.taches"
+                        formControlName="taches" />
+                    </div>
+                  </div>
+                </div>
+
+                <button class="btn btn-success animation-on-hover">Ajouter</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
   <div [hidden]="!authenticated()">
     <div class=" row">
     </div>

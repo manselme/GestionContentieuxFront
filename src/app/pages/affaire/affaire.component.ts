@@ -3,6 +3,7 @@ import {AffaireService } from 'src/app/service/affaire.service';
 import { AppService } from 'src/app/app.service';
 import { Affaire } from 'src/app/model/affaire';
 import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, ReactiveFormsModule, FormsModule, Validators } from '@angular/forms';
 @Component({
   selector: 'app-affaire',
   templateUrl: './affaire.component.html'
@@ -11,13 +12,26 @@ export class AffaireComponent implements OnInit {
   affaires: any[];
   affaire : Affaire = new Affaire();
   idAffaire: number;
-
+  myForm: FormGroup;
 
   constructor(private appService:AppService, private affaireService: AffaireService,
-    private router: Router) { }
+    private router: Router,
+    private reactiveFormsModule: ReactiveFormsModule ,
+    private formsModule: FormsModule,
+    private formBuilder: FormBuilder
+    ) { }
 
   ngOnInit() {
     this.loadAffaire();
+    this.myForm = this.formBuilder.group({
+      titre:['',Validators.required],
+      reference :['',Validators.required],
+      description:['',Validators.required],
+      statut:['',Validators.required],
+      phases:['',Validators.required],
+      tribunal:['',Validators.required],
+      taches:['',Validators.required],
+    });
   }
   authenticated(){
     return this.appService.authenticated;
